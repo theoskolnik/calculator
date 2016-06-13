@@ -11,9 +11,32 @@ import Foundation
 class CalculatorBrain
 {
     private var accumulator = 0.0
+    var steps = [AnyObject]()
     
     func setOperand(operand: Double) {
         accumulator = operand
+    }
+    
+    func getSteps() -> String{
+        var stepsString = ""
+        for step in steps {
+            if let operand = step as? Double {
+                stepsString += String(operand)
+            } else if let operation = step as? String {
+                stepsString += operation
+            }
+        }
+        return stepsString
+    }
+    
+    func addToSteps(digit: String) {
+        steps.append(digit)
+    }
+
+    func clear() {
+        accumulator = 0.0
+        pending = nil
+        steps.removeAll()
     }
     
      private var operations: Dictionary<String, Operation> = [
@@ -36,11 +59,15 @@ class CalculatorBrain
     private enum Operation {
         case Constant(Double)
         case UnaryOperation((Double) -> Double)
+        
         case BinaryOperation((Double, Double) -> Double)
         case Equals
     }
     
     func performOperation(symbol: String) {
+        if symbol != "=" {
+            steps.append(symbol)
+        }
         if let operation = operations[symbol] {
             switch operation {
             case .Constant(let value):

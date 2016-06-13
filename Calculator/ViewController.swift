@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet private weak var display: UILabel!
+    
     
     private var userIsInTheMiddleOfTyping = false
+    
+    private var brain = CalculatorBrain()
+
+    @IBOutlet private weak var display: UILabel!
+    
+    @IBOutlet private weak var calculatorSteps: UILabel!
     
     @IBAction private func touchDigit(sender: UIButton) {
         let digit = sender.currentTitle!
@@ -25,26 +31,25 @@ class ViewController: UIViewController {
         userIsInTheMiddleOfTyping = true
     }
     
-    private var displayValue: Double {
-        get {
-            return Double(display.text!)!
-        }
-        set {
-            display.text = String(newValue)
-        }
+    @IBAction private func clearDisplay() {
+        brain.clear()
+        display.text = String(0)
+        calculatorSteps.text = String(0)
     }
     
-    private var brain = CalculatorBrain()
     
     @IBAction private func performOperation(sender: UIButton) {
         if userIsInTheMiddleOfTyping {
             brain.setOperand(displayValue)
+            brain.addToSteps(String(displayValue))
             userIsInTheMiddleOfTyping = false
         }
         if let mathematicalSymbol = sender.currentTitle {
             brain.performOperation(mathematicalSymbol)
+            calculatorSteps.text = brain.getSteps()
         }
         displayValue = brain.result
+        
     }
     
     @IBAction func addDecimalPoint(sender: UIButton) {
@@ -53,5 +58,14 @@ class ViewController: UIViewController {
             display.text = display.text! + period
         }
         userIsInTheMiddleOfTyping = true
+    }
+    
+    private var displayValue: Double {
+        get {
+            return Double(display.text!)!
+        }
+        set {
+            display.text = String(newValue)
+        }
     }
 }
