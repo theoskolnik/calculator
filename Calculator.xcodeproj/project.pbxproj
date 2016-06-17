@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21140CBF1D148204002AAE5D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 21140CBE1D148204002AAE5D /* .gitignore */; };
 		86B0692C1D0DD422001B2539 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B0692B1D0DD422001B2539 /* AppDelegate.swift */; };
 		86B0692E1D0DD422001B2539 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B0692D1D0DD422001B2539 /* ViewController.swift */; };
 		86B069311D0DD422001B2539 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B0692F1D0DD422001B2539 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21140CBE1D148204002AAE5D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		86B069281D0DD422001B2539 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B0692B1D0DD422001B2539 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86B0692D1D0DD422001B2539 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		86B0691F1D0DD422001B2539 = {
 			isa = PBXGroup;
 			children = (
+				21140CBE1D148204002AAE5D /* .gitignore */,
 				86B0692A1D0DD422001B2539 /* Calculator */,
 				86B0693F1D0DD422001B2539 /* CalculatorTests */,
 				86B0694A1D0DD422001B2539 /* CalculatorUITests */,
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21140CBF1D148204002AAE5D /* .gitignore in Resources */,
 				86B069361D0DD422001B2539 /* LaunchScreen.storyboard in Resources */,
 				86B069331D0DD422001B2539 /* Assets.xcassets in Resources */,
 				86B069311D0DD422001B2539 /* Main.storyboard in Resources */,
@@ -499,6 +503,7 @@
 				86B069521D0DD422001B2539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86B069531D0DD422001B2539 /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +512,7 @@
 				86B069551D0DD422001B2539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86B069561D0DD422001B2539 /* Build configuration list for PBXNativeTarget "CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +521,7 @@
 				86B069581D0DD422001B2539 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
