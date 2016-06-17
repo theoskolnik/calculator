@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     
     @IBAction func addDecimalPoint(sender: UIButton) {
         let period = sender.currentTitle!
-        if userIsInTheMiddleOfTyping && !display.text!.containsString(".") {
+        if numberDoesNotHaveADecimal() {
             display.text = display.text! + period
         }
         userIsInTheMiddleOfTyping = true
@@ -67,5 +67,13 @@ class ViewController: UIViewController {
         set {
             display.text = String(newValue)
         }
+    }
+    
+    private func alreadyHasADecimalPoint() -> Bool {
+        return display.text!.containsString(".")
+    }
+    
+    private func numberDoesNotHaveADecimal() -> Bool {
+        return userIsInTheMiddleOfTyping && !alreadyHasADecimalPoint()
     }
 }
